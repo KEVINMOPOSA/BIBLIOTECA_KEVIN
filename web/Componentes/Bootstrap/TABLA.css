@@ -1,0 +1,49 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 04-sep-2022, 10:42:28
+    Author     : USUARIO
+*/
+
+header{
+    background: #8E2DE2;
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
+    background: linear-gradient(to right, #4A00E0, #8E2DE2);
+}
+
+/*estilos para la tabla*/
+table th {
+    background-color: #337ab7 !important;
+    color: white;
+}
+table>tbody>tr>td {
+    vertical-align: middle !important;
+}
+
+/*para alinear los botones y cuadro de busqueda*/
+.btn-group, .btn-group-vertical {
+    position: absolute !important;
+}
+
+@media (max-width: 30em){
+    table {
+        width: 100%;
+    }
+    table tr{
+        display: flex;
+        flex-direction: column;
+        border: 1px solid gray;
+        padding: 1em;
+    }
+    table thead{
+        display: none;
+    }
+    table td [data-titulo]{
+        display: flex;
+    }
+    table td[data-titulo]::before{
+        content: attr( data-titulo);
+        width: 90px;
+    }
