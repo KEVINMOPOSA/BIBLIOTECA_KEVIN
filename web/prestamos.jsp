@@ -261,19 +261,7 @@
                                     </td>
                                 </tr> 
                             </tbody>
-                        </table>
-                        <div class="clearfix">
-                            <div class="hint-text">Showing <b>5</b> out of <b>100</b> entries</div>
-                            <ul class="pagination">
-                                <li class="page-item disabled"><a href="#">Previous</a></li>
-                                <li class="page-item"><a href="#" class="page-link">1</a></li>
-                                <li class="page-item"><a href="#" class="page-link">2</a></li>
-                                <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                                <li class="page-item"><a href="#" class="page-link">4</a></li>
-                                <li class="page-item"><a href="#" class="page-link">5</a></li>
-                                <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                            </ul>
-                        </div>
+                        </table>     
                     </div>
                 </div>
                 <!-- Edit Modal HTML -->
@@ -292,15 +280,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label>FECHA SALIDA</label>
-                                        <input type="text" class="form-control" required>
+                                        <input type="text" class="form-control" name="txtfechapresatmo" required>
                                     </div>
                                     <div class="form-group">
                                         <label>HORA SALIDA</label>
-                                        <input type="text" class="form-control" required>
+                                        <input type="text" class="form-control" name="" required>
                                     </div>
                                     <div class="form-group">
                                         <label>FECHA DEVOLUCION</label>
-                                        <input type="text" class="form-control" required>
+                                        <input type="text" class="form-control" name="txtfechadev" required>
                                     </div>     
                                     <div class="form-group">
                                         <label>HORA DEVOLUCION</label>
@@ -313,7 +301,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                                    <input type="submit" class="btn btn-success" value="Guardar">
+                                    <input type="submit" class="btn btn-success" value="procesar">
                                 </div>
                             </form>
                         </div>

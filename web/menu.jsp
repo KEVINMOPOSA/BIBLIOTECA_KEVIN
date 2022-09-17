@@ -79,6 +79,9 @@
                             <i class="material-icons">grid_on</i><span>REGISTROS</span></a>
                         <ul class="collapse list-unstyled menu" id="pageSubmenu6">
                             <li>
+                                <a href="TODO.jsp">TODO LOS REGISTROS</a>
+                            </li>
+                            <li>
                                 <a href="estudiantes.jsp">ESTUDIANTES</a>
                             </li>
                             <li>

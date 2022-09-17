@@ -4,9 +4,33 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>Controller.Login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>guardar</servlet-name>
+        <servlet-class>Controller.guardar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>registrar</servlet-name>
+        <servlet-class>Controller.registrar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>prestamos</servlet-name>
+        <servlet-class>prestamos</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>guardar</servlet-name>
+        <url-pattern>/guardar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>registrar</servlet-name>
+        <url-pattern>/registrar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>prestamos</servlet-name>
+        <url-pattern>/prestamos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

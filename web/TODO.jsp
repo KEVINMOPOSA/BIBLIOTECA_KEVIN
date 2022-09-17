@@ -1,8 +1,9 @@
 <%-- 
-    Document   : estudiantes
-    Created on : 03-sep-2022, 19:48:23
-    Author     : USUARIO
+    Document   : TODO
+    Created on : 7 sep. 2022, 18:47:25
+    Author     : L1PC08
 --%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
@@ -140,14 +141,35 @@
                         <div class="table-title">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <h2>REGISTROS <b>ESTUDIANTES</b></h2>
+                                    <h2>REGISTROS <b>TODOS LOS REGISTROS</b></h2>
                                 </div>
                                 <div class="col-sm-6">
-                                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>AGREGAR NUEVO REGISTRO</span></a>
+                                    <a  type="submit" href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" ><i class="material-icons">&#xE147;</i> <span>AGREGAR NUEVO REGISTRO</span></a>
                                     <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>ELIMINAR</span></a>      
                                 </div>
                             </div>
                         </div>
+                        <%!
+            String t1nom, t2ap, t3ced, t4car, t5niv, t6cor, t11numpg, t10estado, t7cod, t8titu, t9autor, t10npag, t11estado, t12fep, t13fedev, mensaje;
+        %>
+        <%
+
+            t1nom = request.getParameter("txtnombre");
+            t2ap = request.getParameter("txtapellido");
+            t3ced = request.getParameter("txtcedula");
+            t4car = request.getParameter("txtcarrera");
+            t5niv = request.getParameter("txtnivel");
+            t6cor = request.getParameter("txtcorreo");
+            t7cod = request.getParameter("txtcodigo");
+            t8titu = request.getParameter("txttitulo");
+            t9autor = request.getParameter("txtautor");
+            t10estado = request.getParameter("txtesatdolibro");
+            t11numpg = request.getParameter("txtnumpaginas");
+            t12fep = request.getParameter("txtfechapresatmo");
+            t13fedev = request.getParameter("txtfechadev");
+            mensaje = t1nom + " " + t2ap;
+
+        %>
                         <table class="table table-striped table-hover">
                             <thead>
                                 <tr>
@@ -157,17 +179,19 @@
                                             <label for="selectAll"></label>
                                         </span>
                                     </th>
-                                    <th>ID</th>
                                     <th>NOMBRES</th>
                                     <th>APELLIDOS</th>
                                     <th>CEDULA</th>
-                                    <th>EMAIL</th>
-                                    <th>FORMACION</th>
-                                    <th>CLAVE</th>
-                                    <th>PARAMETRO</th>
-                                    <th>NIVEL</th>
                                     <th>CARRERA</th>
-                                    <th>PARALELO</th>                            
+                                    <th>NIVEL</th>
+                                    <th>CORREO</th>
+                                    <th>CODIGO</th>
+                                    <th>TITULO</th>
+                                    <th>AUTOR</th>
+                                    <th>NUMERO PAG</th>   
+                                    <th>ESTADO</th> 
+                                    <th>FECHA DE PRESTAMO</th> 
+                                    <th>FECHA DEVOLUCION</th> 
                                 </tr>
                             </thead>                  
                             <tbody>
@@ -178,25 +202,26 @@
                                             <label for="checkbox1"></label>
                                         </span>
                                     </td>
-                                    <td data-titulo="ID">   
-                                    </td>  
-                                    <td data-titulo="NOMBRES">
+                                    <td data-titulo="NOMBRES"><%= t1nom%>
                                     </td>
-                                    <td data-titulo="APELLIDOS">
+                                    <td data-titulo="APELLIDOS"><%=t2ap%>
                                     </td>
-                                    <td data-titulo="CEDULA">
+                                    <td data-titulo="CEDULA"><%=t3ced%>
                                     </td>
-                                    <td data-titulo="EMAIL">
+                                    <td data-titulo="CARRERA"><%=t4car%>
                                     </td>
-                                    <td data-titulo="FORMACION">
+                                    <td data-titulo="NIVEL"><%=t5niv%>
                                     </td>
-                                    <td data-titulo="CLAVE">
+                                    <td data-titulo="CORREO"><%=t6cor%>
                                     </td>
-                                    <td data-titulo="PARAMETRO">
+                                    <td data-titulo="CODIGO"><%=t7cod%>
                                     </td>
-                                    <td data-titulo="NIVEL"></td>
-                                    <td data-titulo="CARRERA"></td>
-                                    <td data-titulo="PARALELO"></td>
+                                    <td data-titulo="TITULO"><%=t8titu%></td>
+                                    <td data-titulo="AUTOR"><%=t9autor%></td>
+                                    <td data-titulo="NUMERO PAG"><%=t10estado%></td>
+                                    <td data-titulo="ESTADO"><%=t11numpg%></td> 
+                                    <td data-titulo="FECHA PRESTAMO"><%= t12fep%></td> 
+                                    <td data-titulo="FECHA DEVOLUCION"><%=t13fedev%></td>
                                     <td>
                                         <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
                                         <a href="#editEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Borrar">&#xE872;</i></a>
@@ -209,156 +234,131 @@
                                             <label for="checkbox1"></label>
                                         </span>
                                     </td>
-                                    <td data-titulo="ID">   
-                                    </td>  
                                     <td data-titulo="NOMBRES">
                                     </td>
                                     <td data-titulo="APELLIDOS">
                                     </td>
                                     <td data-titulo="CEDULA">
                                     </td>
-                                    <td data-titulo="EMAIL">
+                                    <td data-titulo="CARRERA">
                                     </td>
-                                    <td data-titulo="FORMACION">
+                                    <td data-titulo="NIVEL">
                                     </td>
-                                    <td data-titulo="CLAVE">
+                                    <td data-titulo="CORREO">
                                     </td>
-                                    <td data-titulo="PARAMETRO">
+                                    <td data-titulo="CODIGO">
                                     </td>
-                                    <td data-titulo="NIVEL"></td>
-                                    <td data-titulo="CARRERA"></td>
-                                    <td data-titulo="PARALELO"></td>
+                                    <td data-titulo="TITULO"></td>
+                                    <td data-titulo="AUTOR"></td>
+                                    <td data-titulo="NUMERO PAG"></td>
+                                    <td data-titulo="ESTADO"></td> 
+                                    <td data-titulo="FECHA PRESTAMO"></td> 
+                                    <td data-titulo="FECHA DEVOLUCION"></td>
                                     <td>
                                         <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
                                         <a href="#editEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Borrar">&#xE872;</i></a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <span class="custom-checkbox">
-                                            <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                            <label for="checkbox1"></label>
-                                        </span>
-                                    </td>
-                                    <td data-titulo="ID">   
-                                    </td>  
-                                    <td data-titulo="NOMBRES">
-                                    </td>
-                                    <td data-titulo="APELLIDOS">
-                                    </td>
-                                    <td data-titulo="CEDULA">
-                                    </td>
-                                    <td data-titulo="EMAIL">
-                                    </td>
-                                    <td data-titulo="FORMACION">
-                                    </td>
-                                    <td data-titulo="CLAVE">
-                                    </td>
-                                    <td data-titulo="PARAMETRO">
-                                    </td>
-                                    <td data-titulo="NIVEL"></td>
-                                    <td data-titulo="CARRERA"></td>
-                                    <td data-titulo="PARALELO"></td>
-                                    <td>
-                                        <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
-                                        <a href="#editEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Borrar">&#xE872;</i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="custom-checkbox">
-                                            <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                            <label for="checkbox1"></label>
-                                        </span>
-                                    </td>
-                                    <td data-titulo="ID">   
-                                    </td>  
-                                    <td data-titulo="NOMBRES">
-                                    </td>
-                                    <td data-titulo="APELLIDOS">
-                                    </td>
-                                    <td data-titulo="CEDULA">
-                                    </td>
-                                    <td data-titulo="EMAIL">
-                                    </td>
-                                    <td data-titulo="FORMACION">
-                                    </td>
-                                    <td data-titulo="CLAVE">
-                                    </td>
-                                    <td data-titulo="PARAMETRO">
-                                    </td>
-                                    <td data-titulo="NIVEL"></td>
-                                    <td data-titulo="CARRERA"></td>
-                                    <td data-titulo="PARALELO"></td>
-                                    <td>
-                                        <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
-                                        <a href="#editEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Borrar">&#xE872;</i></a>
-                                    </td>
-                                </tr>
+                               
+                                
                             </tbody>
                         </table>
+                                    LA RSPUESTA ES :
+<%
+    out.println(request.getAttribute("devolver")+"LA FECHAS   "+  t12fep+ t13fedev);
+%>
+
                     </div>
                 </div>
                 <!-- Edit Modal HTML -->
                 <div id="addEmployeeModal" class="modal fade">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <form action="guardar">
+                            <form action="guardar" method="post">
                                 <div class="modal-header">      
                                     <h4 class="modal-title">REGISTRAR</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
-                                <div class="modal-body">     
-                                    <div class="form-group">
-                                        <label>ID</label>
-                                        <input type="text" class="form-control" required name="txtid">
-                                    </div>
+                                <div class="modal-body">          
                                     <div class="form-group">
                                         <label>NOMBRES</label>
-                                        <input type="text" class="form-control" name="txt-usuario-add" required>
+                                        <input type="text" class="form-control" name="txtnombre" required>
                                     </div>
                                     <div class="form-group">
                                         <label>APELLIDOS</label>
-                                        <input type="text" class="form-control" required name="txtapellido">
+                                        <input type="text" class="form-control" name="txtapellido" required >
                                     </div>
                                     <div class="form-group">
                                         <label>CEDULA</label>
-                                        <input type="text" class="form-control" required name="txtcedula">
+                                        <input type="text" class="form-control" name="txtcedula">
                                     </div>     
                                     <div class="form-group">
-                                        <label>EMAIL</label>
-                                        <input type="text" class="form-control" required name="txtemail">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>FORMACION</label>
-                                        <input type="text" class="form-control" required name="txtformacion">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>CLAVE</label>
-                                        <input type="text" class="form-control" name="txt-clave-add" required name="txtclave">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>PARAMETRO</label>
-                                        <input type="text" class="form-control" required name="txtparametro">
+                                        <label>CARRERA</label>
+                                        <input type="text" class="form-control" name="txtcarrera">
                                     </div>
                                     <div class="form-group">
                                         <label>NIVEL</label>
-                                        <input type="text" class="form-control" required name="txtnivel">
+                                        <input type="text" class="form-control" name="txtnivel">
                                     </div>
                                     <div class="form-group">
-                                        <label>CARRERA</label>
-                                        <input type="text" class="form-control" required name="txtcarrera">
+                                        <label>CORREO</label>
+                                        <input type="text" class="form-control" name="txtcorreo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>CODIGO</label>
+                                        <input type="text" class="form-control" name="txtcodigo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>TITULO</label>
+                                        <input type="text" class="form-control" name="txttitulo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>AUTOR</label>
+                                        <input type="text" class="form-control" name="txtautor">
                                     </div> 
                                     <div class="form-group">
-                                        <label>PARALELO</label>
-                                        <input type="text" class="form-control" required name="txtparalelo">
-                                    </div>     
+                                        <label>NUMERO PAG</label>
+                                        <input type="text" class="form-control" name="txtnumeorpag">
+                                    </div><div class="form-group">
+                                        <label>ESTADO</label>
+                                        <input type="text" class="form-control" name="txtparalelo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>FECHA PRESTAMO </label>
+                                        <input type="text" class="form-control"  name="txtfechapresatmo" required >
+                                    </div><div class="form-group">
+                                        <label>FECHA DEVOLUCION</label>
+                                        <input type="text" class="form-control" name="txtfechadev" required>
+                                    </div>
+                                    
+                                    
                                 </div>
                                 <div class="modal-footer">
                                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                                    <input type="submit"  name="accion" class="btn btn-success" value="Guardar">
+                                    <input type="submit"  name="procesar" class="btn btn-success" value="CALCULAR">
+       
                                 </div>
                             </form>
+                          <%
+                                                        String t1nom, t2ap, t3ced, t4car, t5niv, t6cor,
+                                                                t7cod, t8titu, t9autor, t10npag, t10estado, t11numpg, t12fep, t13fedev;
+                                                        t1nom = request.getParameter("txtnombre");
+                                                        t2ap = request.getParameter("txtapellido");
+                                                        t3ced = request.getParameter("txtcedula");
+                                                        t4car = request.getParameter("txtcarrera");
+                                                        t5niv = request.getParameter("txtnivel");
+
+                                                        t6cor = request.getParameter("txtcorreo");
+                                                        t7cod = request.getParameter("txtcodigo");
+                                                        t8titu = request.getParameter("txttitulo");
+                                                        t9autor = request.getParameter("txtautor");
+                                                        t10estado = request.getParameter("txtesatdolibro");
+                                                        t11numpg = request.getParameter("txtnumpaginas");
+                                                        t12fep = request.getParameter("txtfechapresatmo");
+                                                        t13fedev = request.getParameter("txtfechadev");
+
+
+                                                    %>
                         </div>
                     </div>
                 </div>
@@ -366,17 +366,13 @@
                 <div id="editEmployeeModal" class="modal fade">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <form action="guardar">
+                            <form>
                                 <div class="modal-header">      
                                     <h4 class="modal-title">MODIFICACION</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
                                 <div class="modal-body">     
-                                    <div class="form-group">
-                                        <label>ID</label>
-                                        <input type="text" class="form-control" required name="txtid">
-                                    </div>
-                                    <div class="form-group">
+                                     <div class="form-group">
                                         <label>NOMBRES</label>
                                         <input type="text" class="form-control" name="txt-usuario-add" required>
                                     </div>
@@ -389,33 +385,43 @@
                                         <input type="text" class="form-control" required name="txtcedula">
                                     </div>     
                                     <div class="form-group">
-                                        <label>EMAIL</label>
+                                        <label>CARRERA</label>
                                         <input type="text" class="form-control" required name="txtemail">
                                     </div>
                                     <div class="form-group">
-                                        <label>FORMACION</label>
+                                        <label>NIVEL</label>
                                         <input type="text" class="form-control" required name="txtformacion">
                                     </div>
                                     <div class="form-group">
-                                        <label>CLAVE</label>
+                                        <label>CORREO</label>
                                         <input type="text" class="form-control" name="txt-clave-add" required name="txtclave">
                                     </div>
                                     <div class="form-group">
-                                        <label>PARAMETRO</label>
+                                        <label>CODIGO</label>
                                         <input type="text" class="form-control" required name="txtparametro">
                                     </div>
                                     <div class="form-group">
-                                        <label>NIVEL</label>
+                                        <label>TITULO</label>
                                         <input type="text" class="form-control" required name="txtnivel">
                                     </div>
                                     <div class="form-group">
-                                        <label>CARRERA</label>
+                                        <label>AUTOR</label>
                                         <input type="text" class="form-control" required name="txtcarrera">
                                     </div> 
                                     <div class="form-group">
-                                        <label>PARALELO</label>
+                                        <label>NUMERO PAG</label>
                                         <input type="text" class="form-control" required name="txtparalelo">
-                                    </div>     
+                                    </div><div class="form-group">
+                                        <label>ESTADO</label>
+                                        <input type="text" class="form-control" required name="txtparalelo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>FECHA PRESTAMO </label>
+                                        <input type="text" class="form-control" required name="txtparalelo">
+                                    </div><div class="form-group">
+                                        <label>FECHA DEVOLUCION</label>
+                                        <input type="text" class="form-control" required name="txtparalelo">
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
@@ -429,7 +435,7 @@
                 <div id="deleteEmployeeModal" class="modal fade">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <form action="guardar">
+                            <form>
                                 <div class="modal-header">      
                                     <h4 class="modal-title">ELIMINAR REGISTROS</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

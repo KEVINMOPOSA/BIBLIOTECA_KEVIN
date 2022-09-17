@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (https://github.com/eclipse-ee4j/metro-jax-ws). RI's version is Eclipse Metro/2.4.8 (RELEASE-2.4.8-e044505; 2022-01-04T13:29:23+0000) JAXWS-RI/2.3.5 JAXWS-API/2.3.3 JAXB-RI/2.3.5 JAXB-API/2.3.3 git-revision#e044505. --><xs:schema xmlns:tns="http://WEB/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://WEB/">
+
+<xs:element name="Estudiantes" type="tns:Estudiantes"/>
+
+<xs:element name="EstudiantesResponse" type="tns:EstudiantesResponse"/>
+
+<xs:element name="FECHA" type="tns:FECHA"/>
+
+<xs:element name="FECHAResponse" type="tns:FECHAResponse"/>
+
+<xs:element name="LIBRO" type="tns:LIBRO"/>
+
+<xs:element name="LIBROResponse" type="tns:LIBROResponse"/>
+
+<xs:element name="ParseException" type="tns:ParseException"/>
+
+<xs:complexType name="FECHA">
+<xs:sequence>
+<xs:element name="dia_entrega" type="xs:string" minOccurs="0"/>
+<xs:element name="mes_entrega" type="xs:string" minOccurs="0"/>
+<xs:element name="ano_entrega" type="xs:string" minOccurs="0"/>
+<xs:element name="hora_entrega" type="xs:string" minOccurs="0"/>
+<xs:element name="minutos_entrega" type="xs:string" minOccurs="0"/>
+<xs:element name="estado_entrega" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="FECHAResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ParseException">
+<xs:sequence>
+<xs:element name="errorOffset" type="xs:int"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Estudiantes">
+<xs:sequence>
+<xs:element name="estudiantesNombres" type="xs:string" minOccurs="0"/>
+<xs:element name="estudiantesApellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="estudiantesCedula" type="xs:string" minOccurs="0"/>
+<xs:element name="estudiantesCarrera" type="xs:string" minOccurs="0"/>
+<xs:element name="estudiantesNivel" type="xs:string" minOccurs="0"/>
+<xs:element name="estudiantesParalelo" type="xs:string" minOccurs="0"/>
+<xs:element name="estudiantesDireccion" type="xs:string" minOccurs="0"/>
+<xs:element name="estudiantesTelefono" type="xs:string" minOccurs="0"/>
+<xs:element name="estuydiantesCorreo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="EstudiantesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LIBRO">
+<xs:sequence>
+<xs:element name="libroCodigo" type="xs:string" minOccurs="0"/>
+<xs:element name="libroTitulo" type="xs:string" minOccurs="0"/>
+<xs:element name="libroAutor" type="xs:string" minOccurs="0"/>
+<xs:element name="libroPag" type="xs:int" minOccurs="0"/>
+<xs:element name="libroTipo" type="xs:string" minOccurs="0"/>
+<xs:element name="libroDescripcion" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LIBROResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

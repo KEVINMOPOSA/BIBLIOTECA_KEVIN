@@ -107,7 +107,7 @@ body {
     opacity: 0.6;
 }
 
-/* @media (max-width: 576px) {
+ @media (max-width: 576px) {
     .login-form form{
         padding: 50px 20px;
     }
@@ -117,4 +117,4 @@ body {
         font-size: 30px;
         line-height: 70px;
     }
-} */
+} 
